@@ -1,0 +1,39 @@
+clc;
+clear all;
+
+Pc = input('Enter the mean input optical power launched into the fiber in dBm :');
+Pr = input('Enter the mean incident optical power required at receiver in dBm :');
+af = input('Enter the attenuation factor in the fiber :');
+Lsp = input('Enter the splice losses per km :');
+Lc = input('Enter the total connector losses :');
+SM = input('Enter the required safety margin :');
+
+Pt = Pc - Pr;
+L = (Pt - Lc - SM) / (af + Lsp);
+disp('The maximum link length is :');
+disp(L);
+
+Pc = input('Enter the mean input optical power launched into the fiber in dBm :');
+Pr = input('Enter the mean incident optical power required at receiver in dBm :');
+af = input('Enter the attenuation factor in the fiber :');
+Lsp = input('Enter the splice loss per km :');
+Lc = input('Enter the total connector losses :');
+SM = input('Enter the required safety margin :');
+
+Pt = Pc - Pr;
+L = (Pt - Lc - SM) / (af + Lsp);
+disp('The maximum link length is :');
+disp(L);
+
+Pc = input('Enter the mean input optical power launched into the fiber in dBm :');
+Pr = input('Enter the mean incident optical power required at receiver in dBm :');
+af = input('Enter the attenuation factor in the fiber :');
+Lsp = input('Enter the splice loss per km :');
+Lc = input('Enter the total connector losses :');
+SM = input('Enter the required safety margin :');
+DEP = input('Enter the required DEP :');
+
+Pt = Pc - Pr;
+L = (Pt - Lc - SM - DEP) / (af + Lsp);
+disp('The maximum link length is :');
+disp(L);
