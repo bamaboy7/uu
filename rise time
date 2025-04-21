@@ -1,0 +1,23 @@
+clc;
+clear all;
+close all;
+
+ts = 8;
+td = 6;
+l = input('fiber length: ');
+inter = 5;
+tinter = l * inter;
+intra = 1;
+tintra = l * intra;
+
+tsys = sqrt(ts^2 + td^2 + tinter^2 + tintra^2);
+fprintf('Total system Rise time: ');
+disp(tsys)
+
+nrz = (0.7 / tsys * 1000);
+fprintf('Bit rate for NRZ format: ');
+disp(nrz)
+
+rz = (0.35 / tsys * 1000);
+fprintf('Bit rate for RZ format: ');
+disp(rz)
