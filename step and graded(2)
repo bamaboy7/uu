@@ -1,0 +1,47 @@
+import numpy as np
+import matplotlib.pyplot as plt
+
+n1 = 1.5
+delta = 0.01
+a = 30
+n2 = n1 * np.sqrt(1 - 2 * delta)
+
+r = np.linspace(0, 50)
+n_step = np.where(r <= a, n1, n2)
+
+plt.figure()
+plt.plot(r, n_step, 'b', label="Step-Index Profile")
+plt.axvline(a, color='r', linestyle='--', label="Core Boundary")
+plt.xlabel("Radial Distance (μm)")
+plt.ylabel("Refractive Index")
+plt.title("Step-Index Fiber profile")
+plt.legend()
+plt.grid(True)
+plt.show()
+
+
+import numpy as np
+import matplotlib.pyplot as plt
+
+n1 = 1.5
+delta = 0.01
+a = 30
+n2 = n1 * np.sqrt(1 - 2 * delta)
+
+r_range = np.linspace(0, a, 500)
+m = (r_range / a)
+n_triangular = n1 * (1 - 2 * delta * m) ** 0.5
+n_parabolic = n1 * (1 - 2 * delta * m ** 2) ** 0.5
+n_step = np.where(r_range <= a, n1, n2)
+
+plt.figure()
+plt.plot(r_range, n_step, label="Step-Index (α = ∞)")
+plt.plot(r_range, n_triangular, label="Triangular Profile (α = 1)")
+plt.plot(r_range, n_parabolic, label="Parabolic Profile (α = 2)")
+plt.axvline(a, color='m', linestyle='--', label="Core Boundary")
+plt.xlabel("Radial Distance (mm)")
+plt.ylabel("Refractive Index")
+plt.title("Refractive Index Profiles")
+plt.legend()
+plt.grid(True)
+plt.show()
